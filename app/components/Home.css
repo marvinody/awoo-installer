@@ -24,10 +24,17 @@
   flex: 1;
   display: flex;
   align-items: center;
+  font-size: 2rem;
 }
 
-.options > div:hover {
+.options > div > i {
+  font-size: 2em;
+  margin: 0 30px;
+}
+
+.options > div:focus {
   background-color: #530000;
+  outline: none;
 }
 
 footer {

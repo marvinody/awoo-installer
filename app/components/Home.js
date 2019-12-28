@@ -3,15 +3,14 @@ import React, { Component } from 'react';
 import styles from './Home.css';
 
 type Props = {};
-
 const options = [
-  { icon: '', desc: 'Install from SD card' },
-  { icon: '', desc: 'Instal over LAN or internet' },
-  { icon: '', desc: 'Manage signature patches' },
-  { icon: '', desc: 'Settings' },
-  { icon: '', desc: 'Exit' }
+  { icon: 'fas fa-sd-card', desc: 'Install from SD card' },
+  { icon: 'fas fa-cloud-download-alt', desc: 'Instal over LAN or internet' },
+  { icon: 'fab fa-usb', desc: 'Install over USB' },
+  { icon: 'fas fa-wrench', desc: 'Manage signature patches' },
+  { icon: 'fas fa-cog ', desc: 'Settings' },
+  { icon: 'fas fa-door-open', desc: 'Exit' }
 ];
-
 export default class Home extends Component<Props> {
   props: Props;
 
@@ -22,14 +21,13 @@ export default class Home extends Component<Props> {
           Awoo Installer<span>v0.0.1</span>
         </h1>
         <div className={styles.options}>
-          {options.map(opt => (
-            <div>{opt.desc}</div>
+          {options.map((opt, idx) => (
+            <div tabIndex={idx}>
+              <i className={opt.icon} />
+              {opt.desc}
+            </div>
           ))}
         </div>
-        <footer>
-          <span>Select</span>
-          <span>Exit</span>
-        </footer>
       </div>
     );
   }
